@@ -1,0 +1,27 @@
+{
+  "name": "ppi-atividade1",
+  "version": "1.0.0",
+  "description": "Atividade avaliativa 1 para matéria PPI do Curso ADS da UNOESTE",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeMorelli-py/PPI-Atividade1.git"
+  },
+  "keywords": [
+    "nodejs",
+    "programacao",
+    "javascript",
+    "fullstack"
+  ],
+  "author": "Leandro Morelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeMorelli-py/PPI-Atividade1/issues"
+  },
+  "homepage": "https://github.com/LeMorelli-py/PPI-Atividade1#readme"
+}
