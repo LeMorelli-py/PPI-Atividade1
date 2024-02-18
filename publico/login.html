@@ -1,52 +1,290 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <title>Faça login no sistema</title>
-    </head>
-    <body>
-        <br/>
-        <div class="container w-50">
-            <h1>Login no Sistema</h1>
-            <form id="formLogin" method="POST" action="/login" class="row g-3 needs-validation" novalidate>
-                <div class="row pt-4">
-                    <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label">Usuário</label>
-                        <input type="text" class="form-control" id="validationCustom01" name="usuario" value="" required>
-                        <div class="valid-feedback">
-                            OK!
-                        </div>
-                        <div class="invalid-feedback">
-                            Por favor, informe o nome do usuário!
-                        </div>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Log in - McFly Records</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-dark">Bem vindo ao Rock'n to the Future Fest 2024</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    Dr. E. Brown Enterprizes co.
+                </a>
+
+                <a href="tickets.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_2">Sobre</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_3">Bandas Confirmadas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_6">Contato</a>
+                        </li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="ticket-section section-padding">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-10 mx-auto">
+                        
+                        <form class="custom-form ticket-form mb-5 mb-lg-0" id="formLogin" method="POST" action="/login" class="row g-3 needs-validation" novalidate>
+                            <h2 class="text-center mb-4" >Login no Sistema</h2>
+                            <div class="row">
+                                <div class="col mb-2">
+                                    <label for="validationCustom01" class="form-label">Usuário</label>
+                                    <input type="text" class="form-control" id="validationCustom01" name="usuario" value="" required>
+                                    <div class="valid-feedback">
+                                        OK!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe o nome do usuário!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-2">
+                                <label for="validationCustomUsername" class="form-label">Senha:</label>
+                                <div class="input-group has-validation">
+                                  <span class="input-group-text" id="inputGroupPrepend">#</span>
+                                  <input type="password" class="form-control" id="validationCustomUsername" name="senha" aria-describedby="inputGroupPrepend" required>
+                                  <div class="valid-feedback">
+                                    OK!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                    Por favor, informe a senha.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Login</button>
+                                    <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+                    
+                                
+                    
+                                
+                                 
+    </main>
+
+
+    
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">McFly Records</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="row pt-4">
-                  <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">Senha:</label>
-                    <div class="input-group has-validation">
-                      <span class="input-group-text" id="inputGroupPrepend">#</span>
-                      <input type="password" class="form-control" id="validationCustomUsername" name="senha" aria-describedby="inputGroupPrepend" required>
-                      <div class="valid-feedback">
-                        OK!
-                      </div>
-                      <div class="invalid-feedback">
-                        Por favor, informe a senha.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row pt-2">
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Login</button>
-                        <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="./scripts/scriptLogin.js"></script>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_1" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_2" class="site-footer-link">Sobre</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_3" class="site-footer-link">Bandas Confirmadas</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_6" class="site-footer-link">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Tem uma pergunta?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            contato@mcflyrecords.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Hill Valley, California, United States of America</p>
+                        <p class="text-white d-flex mt-3 mb-2">
+                            Desenvolvedor: Leandro Coneglian Morelli RA: 10482315190</p>
+                                    </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2023 Mcfly Records</p>
+                        <p class="copyright-text">Distributed by: Dr. E. Brown Enterprises co.</a></p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/valida_doc.js"></script>
+
+</body>
+
 </html>

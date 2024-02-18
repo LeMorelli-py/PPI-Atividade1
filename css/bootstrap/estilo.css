@@ -1,0 +1,54 @@
+
+:root {
+    --wix-font-stack: Madefor,"Helvetica Neue",Helvetica,Arial,"\E3\192\A1\E3\201A\A4\E3\192\AA\E3\201A\AA","meiryo","\E3\192\2019\E3\192\A9\E3\201A\AE\E3\192\17D\E8\A7\2019\E3\201A\B4 pro w3","hiragino kaku gothic pro",sans-serif;
+    --wix-font-weight-regular: 400;
+    --wix-font-weight-medium: 530;
+    --wix-font-weight-bold: 700;
+    --wix-font-weight-xbold: 800;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+<style>
+:root {
+    --wix-font-stack: Madefor,"Helvetica Neue",Helvetica,Arial,"メイリオ","meiryo","ヒラギノ角ゴ pro w3","hiragino kaku gothic pro",sans-serif;
+    --wix-font-weight-regular: 400;
+    --wix-font-weight-medium: 530;
+    --wix-font-weight-bold: 700;
+    --wix-font-weight-xbold: 800;
+}
+<style>
+:root {
+    --wix-font-stack: Madefor,"Helvetica Neue",Helvetica,Arial,"メイリオ","meiryo","ヒラギノ角ゴ pro w3","hiragino kaku gothic pro",sans-serif;
+    --wix-font-weight-regular: 400;
+    --wix-font-weight-medium: 530;
+    --wix-font-weight-bold: 700;
+    --wix-font-weight-xbold: 800;
+}
+@media (max-width: 320px)
+body, html {
+    line-height: 1.38;
+}
+@media (max-width: 1100px)
+body, html {
+    font-size: 14px;
+}
+body, html {
+    background-color: #f9fafa;
+    color: #20303c;
+    font-family: Madefor,Helvetica Neue,Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+folha de estilos do agente do utilizador
+:root {
+    view-transition-name: root;
+}
+folha de estilos do agente do utilizador
+html {
+    display: block;
+}
