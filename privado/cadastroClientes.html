@@ -1,96 +1,540 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <title>Cadastro de Clientes</title>
-    </head>
-    <body>
-        <br/>
-        <div class="container w-60 border p-5">
-            <h1>Cadastro de Clientes</h1>
-            <form id="formCliente" method="POST" action="#" class="row g-3 needs-validation" novalidate>
-                <div class="col-md-4">
-                    <label for="cpf" class="form-label">CPF:</label>
-                    <input type="text" class="form-control" id="cpf" name="cpf" value="" required>
-                    <div class="valid-feedback">
-                    OK!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="nome" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="" required>
-                    <div class="valid-feedback">
-                    OK!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="endereco" class="form-label">Endereço:</label>
-                    <input type="text" class="form-control" id="endereco" name="endereco" value="" required>
-                    <div class="valid-feedback">
-                    OK!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="bairro" class="form-label">Bairro:</label>
-                    <input type="text" class="form-control" id="bairro" name="bairro" value="" required>
-                    <div class="valid-feedback">
-                    OK!
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" required>
-                    <div class="invalid-feedback">
-                    Por favor, informe a cidade!
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="uf" class="form-label">Estado</label>
-                    <select class="form-select" id="uf" name="uf" required>
-                    <option selected disabled value="">Escolha o estado...</option>
-                    <option>SP</option>
-                    <option>RJ</option>
-                    <option>PR</option>
-                    <option>MG</option>
-                    </select>
-                    <div class="invalid-feedback">
-                    Por favor, informe o estado.
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="telefone" class="form-label">Telefone:</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" required>
-                    <div class="invalid-feedback">
-                    Por favor, informe o telefone.
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                    <div class="invalid-feedback">
-                    Por favor, informe o email.
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    <button class="btn btn-primary" id='cadastrar' type="submit">Cadastrar</button>
-                    <button class="btn btn-warning" id='atualizar' type="button" disabled>Atualizar</button>
-                    <button class="btn btn-danger" id='excluir' type="button" disabled>Excluir</button>
-                    <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
-                </div>
-            </form>
-        </div>
-        <br/>
-        <div id="mensagem">
+<!doctype html>
+<html lang="en">
 
-        </div>
-        </br>
-        <div id="espacoTabela">
-            
-        </div>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Festava Live - Ticket HTML Form</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-dark">Bem vindo ao Rock'n to the Future Fest 2024</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    Dr. E. Brown Enterprizes co.
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_2">Sobre</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_3">Bandas Confirmadas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html #section_6">Contato</a>
+                        </li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="ticket-section section-padding">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-10 mx-auto">
+                        <form class="form-estilo" id="formulario">                            <h2 class="text-center mb-4">Seu Cadastro:</h2>
+                            <form id="formCliente" method="POST" action="#" class="row g-3 needs-validation" novalidate>
+                                <div class="col-md-4">
+                                    <label for="cpf" class="form-label">CPF:</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" value="" required>
+                                    <div class="valid-feedback">
+                                    OK!
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="nome" class="form-label">Nome:</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" value="" required>
+                                    <div class="valid-feedback">
+                                    OK!
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="endereco" class="form-label">Endereço:</label>
+                                    <input type="text" class="form-control" id="endereco" name="endereco" value="" required>
+                                    <div class="valid-feedback">
+                                    OK!
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="bairro" class="form-label">Bairro:</label>
+                                    <input type="text" class="form-control" id="bairro" name="bairro" value="" required>
+                                    <div class="valid-feedback">
+                                    OK!
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cidade" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" required>
+                                    <div class="invalid-feedback">
+                                    Por favor, informe a cidade!
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="uf" class="form-label">Estado</label>
+                                    <select class="form-select" id="uf" name="uf" required>
+                                    <option selected disabled value="">Escolha o estado...</option>
+                                    <option>SP</option>
+                                    <option>RJ</option>
+                                    <option>PR</option>
+                                    <option>MG</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                    Por favor, informe o estado.
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="telefone" class="form-label">Telefone:</label>
+                                    <input type="text" class="form-control" id="telefone" name="telefone" required>
+                                    <div class="invalid-feedback">
+                                    Por favor, informe o telefone.
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                    Por favor, informe o email.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary" id='cadastrar' type="submit">Cadastrar</button>
+                                    <button class="btn btn-warning" id='atualizar' type="button" disabled>Atualizar</button>
+                                    <button class="btn btn-danger" id='excluir' type="button" disabled>Excluir</button>
+                                    <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
+                                </div>
+                            </form>
+                            <form class="form-estilo" id="formulario">
+                                <h2 class="mb-2 fs-5">Informações da Cliente:</h2><br>
+                                <label for="obrigatorio" class="form-label"><b>Campos Obrigatórios</b><span class="text-danger">*</span></label>
+                    
+                                <div class="col-md-12 mt-6">
+                                    <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="nome" class="form-label">Nome:<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="sobrenome" class="form-label">Líder <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control maiusculo" id="sobrenome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="20" required>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-md-12 mt-6">
+                                    <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="email" class="form-label">Email da Banda <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="email"
+                                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                                placeholder="" required>
+                                        </div>
+
+                                        <div class="col-md-12 mt-6">
+                                            <div class="row">
+                                              <p>  <div class="col mb-2">
+                                                    <label for="nome" class="form-label">Nome do Integrante <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col mb-2">
+                                                        <label for="nome" class="form-label" >Posição </label>
+                                                        <select id="posicoes" name="posicoes"type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                        <option value="vocalista">Selecione uma posição:</option>
+                                                        <option value="vocalista">Vocalista</option>
+                                                        <option value="guitarrista-solo">Guitarrista Solo</option>
+                                                        <option value="guitarrista-base">Guitarrista Base</option>
+                                                        <option value="baixista">Baixista</option>
+                                                        <option value="baterista">Baterista</option>
+                                                        </select>
+                                            </div></p>
+                                        </div>
+                                        <div class="col-md-12 mt-6">
+                                            <div class="row">
+                                                <div class="col mb-2">
+                                                    <label for="nome" class="form-label">Nome do Integrante <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                </div>
+                                                <label for="nome" class="form-label" >Posição </label>
+                                                <select id="posicoes" name="posicoes"type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
+                                                <option value="vocalista">Selecione uma posição:</option>
+                                                <option value="vocalista">Vocalista</option>
+                                                <option value="guitarrista-solo">Guitarrista Solo</option>
+                                                <option value="guitarrista-base">Guitarrista Base</option>
+                                                <option value="baixista">Baixista</option>
+                                                <option value="baterista">Baterista</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-6">
+                                            <div class="row">
+                                                <div class="col mb-2">
+                                                    <label for="nome" class="form-label">Nome do Integrante <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                </div>
+                                                <label for="nome" class="form-label" >Posição </label>
+                                                <select id="posicoes" name="posicoes"type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
+                                                <option value="vocalista">Selecione uma posição:</option>
+                                                <option value="vocalista">Vocalista</option>
+                                                <option value="guitarrista-solo">Guitarrista Solo</option>
+                                                <option value="guitarrista-base">Guitarrista Base</option>
+                                                <option value="baixista">Baixista</option>
+                                                <option value="baterista">Baterista</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-6">
+                                            <div class="row">
+                                                <div class="col mb-2">
+                                                    <label for="nome" class="form-label">Nome do Integrante <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                </div>
+                                                <label for="nome" class="form-label" >Posição </label>
+                                                <select id="posicoes" name="posicoes"type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
+                                                <option value="vocalista">Selecione uma posição:</option>
+                                                <option value="vocalista">Vocalista</option>
+                                                <option value="guitarrista-solo">Guitarrista Solo</option>
+                                                <option value="guitarrista-base">Guitarrista Base</option>
+                                                <option value="baixista">Baixista</option>
+                                                <option value="baterista">Baterista</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-6">
+                                            <div class="row">
+                                                <div class="col mb-2">
+                                                    <label for="nome" class="form-label">Nome do Integrante <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                        placeholder="" maxlength="30" required>
+                                                </div>
+                                                <label for="nome" class="form-label" >Posição </label>
+                                                <select id="posicoes" name="posicoes"type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
+                                                <option value="vocalista">Selecione uma posição:</option>
+                                                <option value="vocalista">Vocalista</option>
+                                                <option value="guitarrista-solo">Guitarrista Solo</option>
+                                                <option value="guitarrista-base">Guitarrista Base</option>
+                                                <option value="baixista">Baixista</option>
+                                                <option value="baterista">Baterista</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                    
+                                        
+                    
+                                <div class="col-md-12 mt-6">
+                                    <div class="col mb-2">
+                                        <label for="nome" class="form-label">Genero Musical <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                            placeholder="" maxlength="30" required>
+                                    </div>
+                                        <div class="col mb-2">
+                                            <label for="endereco" class="form-label">Endereço da Banda</label>
+                                            <input type="text" class="form-control" id="endereco">
+                                        </div>
+                    
+                                        
+                                    </div>
+                                </div>
+                    
+                                <div class="col-md-12 mt-6">
+                                   <p> <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="bairro" class="form-label">Bairro</label>
+                                            <input type="text" class="form-control" id="bairro">
+                                        </div></p>
+                                        
+                                       <p> <div class="col mb-2">
+                                        <label for="complemento" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="numero">
+                                    </div>
+                                    <div class="col mb-2">
+                                            <label for="cidade" class="form-label">Cidade</label>
+                                            <input type="text" class="form-control" id="cidade">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="estados">Selecione um estado:</label>
+                                            <select id="estados" name="estados"class="form-control">
+                                            <option value="UX">Clique aqui ↓ </option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div></p>
+                                        <div class="col mb-2">
+                                            
+                                            
+                                                <label for="cpf" class="form-label">CPF</label>
+                                                <input type="text" class="form-control" id="cpf" placeholder="Somente números">
+                                        
+                                            
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="rg" class="form-label">RG</label>
+                                            <input type="text" class="form-control" id="rg" placeholder="Somente números">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="dt_nasc" class="form-label">Data Nascimento</label>
+                                            <input type="date" class="form-control" id="dt_nasc" placeholder="Somente números">
+                                        </div>
+                                        <div><a onclick="exibirAlerta()" href="ticket.html" class="btn custom-btn d-lg-block d-none">Cadastro de Bandas</a>
+                                            <title>Alerta de Banda Confirmada</title>
+                                            <script>
+                                              function exibirAlerta() {
+                                                alert("Banda Cadastrada com sucesso!! Nos vemos novamente no futuro, ou no passado!!");
+                                              }
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                
+                    
+                                
+                                 
+    </main>
+
+
     
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">McFly Records</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_1" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_2" class="site-footer-link">Sobre</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_3" class="site-footer-link">Bandas Confirmadas</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html #section_6" class="site-footer-link">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Tem uma pergunta?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            contato@mcflyrecords.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Hill Valley, California, United States of America</p>
+                        <p class="text-white d-flex mt-3 mb-2">
+                            Desenvolvedor: Leandro Coneglian Morelli RA: 10482315190</p>
+                                    </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2023 Mcfly Records</p>
+                        <p class="copyright-text">Distributed by: Dr. E. Brown Enterprises co.</a></p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/valida_doc.js"></script>
+
+</body>
+
 </html>
