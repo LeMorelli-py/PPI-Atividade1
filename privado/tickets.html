@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Log in - McFly Records</title>
+    <title>Comprar Ingressos - Rock to the future - McFly Records </title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,57 +95,90 @@ https://templatemo.com/tm-583-festava-live
 
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-6 col-10 mx-auto">
-                        
-                        <form class="custom-form ticket-form mb-5 mb-lg-0" id="formLogin" method="POST" action="/login" class="row g-3 needs-validation" novalidate>
-                            <h2 class="text-center mb-4" >Login no Sistema</h2>
-                            <div class="row">
-                                <div class="col mb-2">
-                                    <label for="validationCustom01" class="form-label">Usuário</label>
-                                    <input type="text" class="form-control" id="validationCustom01" name="usuario" value="" required>
-                                    <div class="valid-feedback">
-                                        OK!
+                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                            <h2 class="text-center mb-4">Adquira seus ingressos:</h2>
+                            <h3 class="text-center mb-4">Confirme seus dados:</h3>
+
+
+                            <div class="ticket-form-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="ticket-form-name" id="ticket-form-name"
+                                            class="form-control" placeholder="Nome Completo" required>
                                     </div>
-                                    <div class="invalid-feedback">
-                                        Por favor, informe o nome do usuário!
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="email" name="ticket-form-email" id="ticket-form-email"
+                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email"
+                                            required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col mb-2">
-                                <label for="validationCustomUsername" class="form-label">Senha:</label>
-                                <div class="input-group has-validation">
-                                  <span class="input-group-text" id="inputGroupPrepend">#</span>
-                                  <input type="password" class="form-control" id="validationCustomUsername" name="senha" aria-describedby="inputGroupPrepend" required>
-                                  <div class="valid-feedback">
-                                    OK!
-                                  </div>
-                                  <div class="invalid-feedback">
-                                    Por favor, informe a senha.
-                                  </div>
+
+                                <input type="tel" class="form-control" name="ticket-form-phone"
+                                    placeholder="Fone: 085-93456-7890" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" required="">
+
+                                <h6>Choose Ticket Type</h6>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-control">
+                                            <input class="form-check-input" type="checkbox" name="TicketForm"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                10/11 - Steel Dragon $40
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-check-radio form-control">
+                                            <input class="form-check-input" type="checkbox" name="TicketForm"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                11/11 - Massacration $40
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-control">
+                                            <input class="form-check-input" type="checkbox" name="TicketForm"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                12/11 - Spinal Tap $40
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-check-radio form-control">
+                                            <input class="form-check-input" type="checkbox" name="TicketForm"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Combo 3 dias - $100
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="submit" href="index.html">Login</button>
-                                    <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
+
+                                <input type="number" name="ticket-form-number" id="ticket-form-number"
+                                    class="form-control" placeholder="Number of Tickets" required>
+
+                                <textarea name="ticket-form-message" rows="3" class="form-control"
+                                    id="ticket-form-message" placeholder="Additional Request"></textarea>
+
+                                <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                    <button type="submit" class="form-control">Buy Ticket</button>
                                 </div>
-                                <p>Não tem cadastro</p>
-                                <a action='\cadastro' style='text-align: center;' href="PPI-Atividade1\privado\cadastroClientes.html">Cadastre-se</a>
                             </div>
                         </form>
                     </div>
- 
-                    
-                                
-                    
-                                
-                                 
+                </div>
+        </section>
     </main>
 
 
-    
     <footer class="site-footer">
         <div class="site-footer-top">
             <div class="container">
@@ -283,9 +316,7 @@ T e m p l a t e M o
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/valida_doc.js"></script>
-    <script src="scripts/scriptLogin.js"></script>
+
 </body>
 
 </html>

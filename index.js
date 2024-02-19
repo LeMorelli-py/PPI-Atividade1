@@ -1,4 +1,4 @@
-import express, { raw } from 'express';
+import express from 'express';
 import process from 'process';
 import path from 'path';
 import session from 'express-session';
@@ -8,7 +8,7 @@ const host='0.0.0.0'; //O ip 0.0.0.0 representa todas as interfaces (placas de r
 const porta = 3000;  //Porta identifica um programa em execução no host hospedeiro
 const app = express();
 
-//app.use(express.urlencoded({extended: true})); //biblioteca qs
+app.use(express.urlencoded({extended: true})); //biblioteca qs
 
 //gerencie uma sessão como sendo uma espécie de memória adquirida pelo servidor para lembrar com quem ele conversa
 app.use(session({
@@ -24,18 +24,19 @@ app.use(session({
 
 app.use(express.static(path.join(process.cwd(), 'publico')));
 
-app.use(autenticar, express.static(path.join(process.cwd(), 'privado')));
+
 
 app.post('/login', (requisicao, resposta)=>{
     const { usuario, senha } = requisicao.body;
     if (usuario && senha && usuario === 'Leandro' && senha === '0526'){
         requisicao.session.usuarioLogado = true;
-        resposta.redirect('/main.html');
+        resposta.redirect("/main.html");
     } else{
         resposta.redirect('/login.html');
    }
 })
 
+app.use(autenticar, express.static(path.join(process.cwd(), 'privado')));
 
 app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
