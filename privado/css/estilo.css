@@ -88,4 +88,53 @@
         height: 100px;
 }
 
-    
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.formas-pagamento {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.formas-pagamento h2 {
+  margin-top: 0;
+}
+
+.formas-pagamento label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.formas-pagamento input[type="radio"] {
+  margin-right: 10px;
+}
+
+.boleto {
+  display: none;
+}
+
+.cartao-credito, .cartao-debito {
+  display: flex;
+  align-items: center;
+}
+
+.cartao-credito img, .cartao-debito img {
+  margin-right: 10px;
+  width: 50px;
+}
+
+#bandeira-cartao {
+  display: none;
+}
+
+.formas-pagamento button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}

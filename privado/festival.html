@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Log in - McFly Records</title>
+    <title>Combo 3 dias</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,9 +58,23 @@ https://templatemo.com/tm-583-festava-live
                     Dr. E. Brown Enterprizes co.
                 </a>
 
-                
+                <a href="Login.html" class="btn custom-btn d-lg-none ms-auto me-4">Log off</a>
 
-                    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="main.html">Home</a>
+                        </li>
+
+
+                    </ul>
+
+                    <a href="/login.html" class="btn custom-btn d-lg-block d-none">Log off</a>
                 </div>
             </div>
         </nav>
@@ -71,51 +85,29 @@ https://templatemo.com/tm-583-festava-live
 
             <div class="container">
                 <div class="row">
+                    
                     <div class="col-lg-6 col-10 mx-auto">
-                        
-                        <form class="custom-form ticket-form mb-5 mb-lg-0" id="formLogin" method="POST" action="/login" class="row g-3 needs-validation" novalidate>
-                            <h2 class="text-center mb-4" >Login no Sistema</h2>
-                            <div class="row">
-                                <div class="col mb-2">
-                                    <label for="validationCustom01" class="form-label">Usuário</label>
-                                    <input type="text" class="form-control" id="validationCustom01" name="usuario" value="" required>
-                                    <div class="valid-feedback">
-                                        OK!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Por favor, informe o nome do usuário!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col mb-2">
-                                <label for="validationCustomUsername" class="form-label">Senha:</label>
-                                <div class="input-group has-validation">
-                                  <span class="input-group-text" id="inputGroupPrepend">#</span>
-                                  <input type="password" class="form-control" id="validationCustomUsername" name="senha" aria-describedby="inputGroupPrepend" required>
-                                  <div class="valid-feedback">
-                                    OK!
-                                  </div>
-                                  <div class="invalid-feedback">
-                                    Por favor, informe a senha.
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="submit" href="index.html">Login</button>
-                                    <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
-                                </div>
-                                <p>Não tem cadastro</p>
-                                <a action='\cadastro' style='text-align: center;' href="PPI-Atividade1\privado\cadastroClientes.html">Cadastre-se</a>
-                            </div>
-                        </form>
-                    </div>
- 
-                    
+                        <form class="custom-form ticket-form mb-5 mb-lg-0 " action="#" method="post" role="form">
+                            <h2 class="text-center mb-4">Combo 3 dias de festival:</h2>
+                            <img src="images/artists/delorean.jpg"
+                            class="artists-image img-fluid">
+                
+                                <br>
+                                <h2 class="mb-2 fs-5">Informações da Banda:</h2><br>
                                 
-                    
+                                <p style="text-align: justify;max-width: max-content;" >Se um dia para você é muito pouco Rock,
+                                    então nesse Combo promocional com um super desconto aproveitará os três dias de Shows.<br>
+                                <br>    
+                                    Atrações:<br>
+                                    <br>
+                                    10/11 - Steel Dragon<br>
+                                    11/11 - Massacration<br>
+                                    12/11 - Spinal Tap
+                                
+                                
+                                </p>
+                                <br>
+                                <a class="btn custom-btn smoothscroll align-items-lg-center" href="tickets.html">Comprar Ingressos</a>
                                 
                                  
     </main>
@@ -171,6 +163,16 @@ https://templatemo.com/tm-583-festava-live
         <div class="container">
             <div class="row">
 
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="main.html" class="site-footer-link">Home</a>
+                        </li>
+
+
+                    </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
@@ -241,7 +243,7 @@ T e m p l a t e M o
     <script src="js/custom.js"></script>
     <script src="js/main.js"></script>
     <script src="js/valida_doc.js"></script>
-    <script src="scripts/scriptLogin.js"></script>
+
 </body>
 
 </html>

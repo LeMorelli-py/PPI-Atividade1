@@ -54,11 +54,9 @@ https://templatemo.com/tm-583-festava-live
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="main.html">
                     Dr. E. Brown Enterprizes co.
                 </a>
-
-                <a href="tickets.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,23 +66,13 @@ https://templatemo.com/tm-583-festava-live
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html #section_1">Home</a>
+                            <a class="nav-link click-scroll" href="main.html">Home</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html #section_2">Sobre</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html #section_3">Bandas Confirmadas</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html #section_6">Contato</a>
-                        </li>
                     </ul>
 
-                    
+                    <a href="/login.html" class="btn custom-btn d-lg-block d-none">Log off</a>
                 </div>
             </div>
         </nav>
@@ -95,6 +83,7 @@ https://templatemo.com/tm-583-festava-live
 
             <div class="container">
                 <div class="row">
+                    
 
                     <div class="col-lg-6 col-10 mx-auto">
                         <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
@@ -119,7 +108,7 @@ https://templatemo.com/tm-583-festava-live
                                 <input type="tel" class="form-control" name="ticket-form-phone"
                                     placeholder="Fone: 085-93456-7890" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" required="">
 
-                                <h6>Choose Ticket Type</h6>
+                                <h6>Escolha o(s) dia(s):</h6>
 
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -165,12 +154,43 @@ https://templatemo.com/tm-583-festava-live
                                 <input type="number" name="ticket-form-number" id="ticket-form-number"
                                     class="form-control" placeholder="Number of Tickets" required>
 
-                                <textarea name="ticket-form-message" rows="3" class="form-control"
-                                    id="ticket-form-message" placeholder="Additional Request"></textarea>
+
+                                    <div onload="atualizarTotal()" class="total">
+                                        Total: R$<span id="valor-total"></span>
+                                      </div>
+
+                                      <h6>Formas de Pagamento</h6>
+                                      <div class="formas-pagamento">
+                                          <label for="pix">
+                                              <input type="radio" id="pix" name="pagamento" value="pix" checked>
+                                              PIX
+                                          </label>
+                                          <label for="cartao-credito">
+                                              <input type="radio" id="cartao-credito" name="pagamento" value="cartao-credito">
+                                              Cartão de Crédito
+                                              
+                                          </label>
+                                          <label for="cartao-debito">
+                                              <input type="radio" id="cartao-debito" name="pagamento" value="cartao-debito">
+                                              Cartão de Débito
+                                              
+                                          </label>
+                                          <label for="boleto">
+                                              <input type="radio" id="boleto" name="pagamento" value="boleto">
+                                              Boleto
+                                              
+                                          </label>
+                                         
+                                      </div>
+                                        <br>
+                                        <br>
+                                      
 
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                     <button type="submit" class="form-control">Buy Ticket</button>
                                 </div>
+                                                           
+                                  
                             </div>
                         </form>
                     </div>
@@ -316,7 +336,7 @@ T e m p l a t e M o
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
-
+    <script src="scripts/scriptTickets.js"></script>
 </body>
 
 </html>
