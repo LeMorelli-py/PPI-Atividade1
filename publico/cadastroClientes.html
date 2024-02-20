@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Comprar Ingressos - Rock to the future - McFly Records </title>
+    <title>Rock to The Future Fest - Cadastro</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +54,11 @@ https://templatemo.com/tm-583-festava-live
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="main.html">
+                <a class="navbar-brand" href="index.html">
                     Dr. E. Brown Enterprizes co.
                 </a>
+
+              
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,13 +68,9 @@ https://templatemo.com/tm-583-festava-live
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="main.html">Home</a>
+                            <a class="nav-link click-scroll" href="login.html">Home</a>
                         </li>
 
-
-                    </ul>
-
-                    <a href="/login.html" class="btn custom-btn d-lg-block d-none">Log off</a>
                 </div>
             </div>
         </nav>
@@ -83,127 +81,132 @@ https://templatemo.com/tm-583-festava-live
 
             <div class="container">
                 <div class="row">
-                    
 
                     <div class="col-lg-6 col-10 mx-auto">
                         <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                            <h2 class="text-center mb-4">Adquira seus ingressos:</h2>
-                            <h3 class="text-center mb-4">Confirme seus dados:</h3>
+                            <h2 class="text-center mb-4">Cadastre-se:</h2>
 
-
-                            <div class="ticket-form-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="ticket-form-name" id="ticket-form-name"
-                                            class="form-control" placeholder="Nome Completo" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="ticket-form-email" id="ticket-form-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email"
-                                            required>
-                                    </div>
-                                </div>
-
-                                <input type="tel" class="form-control" name="ticket-form-phone"
-                                    placeholder="Fone: 085-93456-7890" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" required="">
-
-                                <h6>Escolha o(s) dia(s):</h6>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-control">
-                                            <input class="form-check-input" type="checkbox" name="TicketForm"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                10/11 - Steel Dragon $40
-                                            </label>
+                            <form class="form-estilo" id="formulario">
+                                <h2 class="mb-2 fs-5">Informações pessoais:</h2><br>
+                                <label for="obrigatorio" class="form-label"><b>Campos Obrigatórios</b><span class="text-danger">*</span></label>
+                    
+                                <div class="col-md-12 mt-6">
+                                    <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="nome" class="form-label">Nome:  <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="30" required>
                                         </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-check-radio form-control">
-                                            <input class="form-check-input" type="checkbox" name="TicketForm"
-                                                id="flexRadioDefault2">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                11/11 - Massacration $40
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-control">
-                                            <input class="form-check-input" type="checkbox" name="TicketForm"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                12/11 - Spinal Tap $40
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-check-radio form-control">
-                                            <input class="form-check-input" type="checkbox" name="TicketForm"
-                                                id="flexRadioDefault2">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Combo 3 dias - $100
-                                            </label>
+                                        <div class="col mb-2">
+                                            <label for="sobrenome" class="form-label">Telefone <span class="text-danger">*</span></label>
+                                            <input oninput="validarTelefone(InputEvent)" type="text" class="form-control maiusculo" id="sobrenome" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="20" required >
                                         </div>
                                     </div>
                                 </div>
+                    
+                                <div class="col-md-12 mt-6">
+                                    <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="email" class="form-label">Email: <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="email"
+                                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                                placeholder="" required>
+                                        </div>
 
-                                <input type="number" name="ticket-form-number" id="ticket-form-number"
-                                    class="form-control" placeholder="Number of Tickets" required>
-
-
-                                    <div onload="atualizarTotal()" class="total">
-                                        Total: R$<span id="valor-total"></span>
-                                      </div>
-
-                                      <h6>Formas de Pagamento</h6>
-                                      <div class="formas-pagamento">
-                                          <label for="pix">
-                                              <input type="radio" id="pix" name="pagamento" value="pix" checked>
-                                              PIX
-                                          </label>
-                                          <label for="cartao-credito">
-                                              <input type="radio" id="cartao-credito" name="pagamento" value="cartao-credito">
-                                              Cartão de Crédito
-                                              
-                                          </label>
-                                          <label for="cartao-debito">
-                                              <input type="radio" id="cartao-debito" name="pagamento" value="cartao-debito">
-                                              Cartão de Débito
-                                              
-                                          </label>
-                                          <label for="boleto">
-                                              <input type="radio" id="boleto" name="pagamento" value="boleto">
-                                              Boleto
-                                              
-                                          </label>
-                                         
-                                      </div>
-                                        <br>
-                                        <br>
-                                      
-
-                                        <div><a onclick="exibirAlerta()" href="tickets.html" class="btn custom-btn d-lg-block d-none">Comprar</a>
-                                            <title>Alerta de Compra</title>
+                                       
+                                        <div class="col mb-2">
+                                            <label for="endereco" class="form-label">Endereço: </label>
+                                            <input type="text" class="form-control" id="endereco">
+                                        </div>
+                    
+                                        
+                                    </div>
+                                </div>
+                    
+                                <div class="col-md-12 mt-6">
+                                   <p> <div class="row">
+                                        <div class="col mb-2">
+                                            <label for="bairro" class="form-label">Bairro</label>
+                                            <input type="text" class="form-control" id="bairro">
+                                        </div></p>
+                                        
+                                       <p> <div class="col mb-2">
+                                        <label for="complemento" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="numero">
+                                    </div>
+                                    <div class="col mb-2">
+                                            <label for="cidade" class="form-label">Cidade</label>
+                                            <input type="text" class="form-control" id="cidade">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="estados">Selecione um estado:</label>
+                                            <select id="estados" name="estados"class="form-control">
+                                            <option value="UX">Clique aqui ↓ </option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div></p>
+                                        <div class="col mb-2">
+                                            
+                                            
+                                                <label for="cpf" class="form-label">CPF</label>
+                                                <input type="text" class="form-control" id="cpf" placeholder="Somente números" oninput="validarCPF(InputEvent)">
+                                        
+                                            
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="rg" class="form-label">RG</label>
+                                            <input type="text" class="form-control" id="rg" placeholder="Somente números" oninput="validarRG(InputEvent)">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <label for="dt_nasc" class="form-label">Data Nascimento</label>
+                                            <input type="date" class="form-control" id="dt_nasc" placeholder="Somente números">
+                                        </div>
+                                        <div><a onclick="exibirAlerta()" href="login.html" class="btn custom-btn d-lg-block d-none">Cadastro de Clientes</a>
+                                            <title>Alerta de Cadastro</title>
                                             <script>
                                               function exibirAlerta() {
-                                                alert("Essa foi pesada!!!, Compra Efetuada com Sucesso! Aproveite no Futuro, ou no passado");
+                                                alert("Cliente Cadastrado com sucesso!! Nos vemos novamente no futuro, ou no passado!!");
                                               }
                                             </script>
                                         </div>
-                                                           
-                                  
-                            </div>
-                        </form>
-                    </div>
-                </div>
-        </section>
+                                    </div>
+                                </div>
+                    
+                                
+                    
+                                
+                                 
     </main>
 
 
+    
     <footer class="site-footer">
         <div class="site-footer-top">
             <div class="container">
@@ -341,7 +344,9 @@ T e m p l a t e M o
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
-    <script src="scripts/scriptTickets.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/valida_doc.js"></script>
+    <script src="js/scriptClientes.js"></script>
 </body>
 
 </html>
