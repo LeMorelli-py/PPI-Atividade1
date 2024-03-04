@@ -1,3 +1,4 @@
+import ClienteDAO from "../../Persistencia/ClientesDAO.js"; 
 export default class Clientes{
     #id;
     #nome;
@@ -24,7 +25,7 @@ export default class Clientes{
         return this.#id;
     }
     set id(new_id){
-        this.#id = id;
+        this.#id = new_id;
     }
     get nome (){
         return this.#nome;
@@ -36,7 +37,7 @@ export default class Clientes{
         return this.#telefone;
     }
     set telefone(new_telefone){
-        this.#telefone = telefone;
+        this.#telefone = new_telefone;
     }
     get email(){
         return this.#email;
@@ -75,8 +76,9 @@ export default class Clientes{
         this.#nascimento = new_nascimento;
     }
     // Armazenar no banco de dados
-    gravar(){
-        
+    async gravar(){
+        const dao = new ClienteDAO();
+        await dao.gravar(this);
     }
     atualizar(){
         

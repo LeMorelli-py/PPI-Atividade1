@@ -1,5 +1,5 @@
 import conectar from "./Conexao.js"; //não esquecer de colocar a extensão .js no final
-import Cliente from "../Modelos/Cliente.js";
+import Cliente from "../publico/scripts/cadastro.js";
 //DAO - Data Access Object
 export default class ClienteDAO{
     async gravar(cliente){
@@ -39,10 +39,12 @@ export default class ClienteDAO{
                 cliente.cidade,
                 cliente.estado,
                 cliente.cpf,
-                cliente.nascimento
+                cliente.nascimento,
+                cliente.id
             ];
 
-            await conexao.execute(sql,parametros);
+           await conexao.execute(sql,parametros);
+           
         }
     }
 
