@@ -44,26 +44,26 @@ app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
 })
 
-/*const cliente = new Cliente(2,
-                            'Maria João da Silve',
+const cliente = new Cliente(2,
+                            'Maria João da Silva',
                             '(14) 88888-9999',
                             'mariajoao@email.com',
                             'Rua cinco, 9998',
                             'Campinas',
                             'SP',
                             '152.222.333-44',
-                            '01/01/1985');*/
+                            '01/01/1985');
 
 //nos metodos assincronos é preciso manipular as promesses (promises)
 //Então, em algum momento o metodo trará uma resposta e o nosso programa
 //não saberá quando isso irá acontecer.
-/*cliente.gravar().then(() => {
+cliente.atualizar().then(() => {
     console.log('Cliente atualizado com sucesso');
 }).catch((erro) => {
       console.log(erro.message);
-});*/
+});
 
-const clienteQQ = new Cliente();
+/*const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
@@ -74,5 +74,5 @@ clienteQQ.consultar(2).then((listaClientes) => {
 }
 }).catch((erro) => {
     console.log(`Nao foi possível encontrar o cliente: ${erro.message}`);
-});
+});*/
 
