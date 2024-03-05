@@ -45,14 +45,14 @@ app.listen(porta, host, ()=>{
 })
 
 /*const cliente = new Cliente(2,
-                            'João Geraldo da Silva',
-                            '(14) 99999-9999',
-                            'joaogeraldo@email.com',
-                            'Rua um, 9998',
-                            'São Paulo',
+                            'Maria João da Silve',
+                            '(14) 88888-9999',
+                            'mariajoao@email.com',
+                            'Rua cinco, 9998',
+                            'Campinas',
                             'SP',
-                            '123.456.789-01',
-                            '01/01/1982');*/
+                            '152.222.333-44',
+                            '01/01/1985');*/
 
 //nos metodos assincronos é preciso manipular as promesses (promises)
 //Então, em algum momento o metodo trará uma resposta e o nosso programa
@@ -67,8 +67,12 @@ const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
-clienteQQ.consultar('Geraldo').then((lista) => {
-    listaClientes = lista;
-}).catch(erro => {
+clienteQQ.consultar(2).then((listaClientes) => {
+    console.log('Clientes encontrados:');
+    for (const cliente of listaClientes){
+        console.log(cliente.toJSON());
+}
+}).catch((erro) => {
     console.log(`Nao foi possível encontrar o cliente: ${erro.message}`);
-})
+});
+
