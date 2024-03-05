@@ -57,13 +57,24 @@ const cliente = new Cliente(2,
 //nos metodos assincronos é preciso manipular as promesses (promises)
 //Então, em algum momento o metodo trará uma resposta e o nosso programa
 //não saberá quando isso irá acontecer.
+/*cliente.gravar().then(() => {
+    console.log('Cliente Cadastrado com sucesso');
+}).catch((erro) => {
+      console.log(erro.message);
+});
+
 cliente.atualizar().then(() => {
     console.log('Cliente atualizado com sucesso');
 }).catch((erro) => {
       console.log(erro.message);
 });
 
-/*const clienteQQ = new Cliente();
+cliente.excluir().then(() => {
+    console.log('Cliente excluído com sucesso');
+}).catch((erro) => {
+      console.log(erro.message);
+});
+const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
