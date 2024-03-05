@@ -80,13 +80,32 @@ export default class Clientes{
         const dao = new ClienteDAO();
         await dao.gravar(this);
     }
-    atualizar(){
-        
+    async atualizar(){
+        const dao = new ClienteDAO();
+        await dao.atualizar(this);
     }
-    excluir(){
-        
+    async excluir(){
+        const dao = new ClienteDAO();
+        await dao.excluir(this);
     }
-    consultar(){
-        
+    async consultar(termoDePesquisa){
+        const dao = new ClienteDAO();
+        return await dao.consultar(termoDePesquisa);
+    }
+    toString(){
+        return `Cliente id: ${this.id} - nome: ${this.nome}`
+    }
+    toJSON(){
+        return{
+            id: this.id,
+            nome: this.nome,
+            telefone: this.telefone,
+            email: this.email,
+            endereco: this.endereco,
+            cidade: this.cidade,
+            estado: this.estado,
+            cpf: this.cpf,
+            nascimento: this.nascimento
+        }
     }
 }

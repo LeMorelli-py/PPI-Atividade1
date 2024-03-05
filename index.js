@@ -3,6 +3,8 @@ import process from 'process';
 import path from 'path';
 import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
+import Cliente from './publico/scripts/cadastro.js';
+import { error } from 'console';
 
 const host='0.0.0.0'; //O ip 0.0.0.0 representa todas as interfaces (placas de rede) do computador onde essa aplicação for executada
 const porta = 3000;  //Porta identifica um programa em execução no host hospedeiro
@@ -40,4 +42,33 @@ app.use(autenticar, express.static(path.join(process.cwd(), 'privado')));
 
 app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
+})
+
+/*const cliente = new Cliente(2,
+                            'João Geraldo da Silva',
+                            '(14) 99999-9999',
+                            'joaogeraldo@email.com',
+                            'Rua um, 9998',
+                            'São Paulo',
+                            'SP',
+                            '123.456.789-01',
+                            '01/01/1982');*/
+
+//nos metodos assincronos é preciso manipular as promesses (promises)
+//Então, em algum momento o metodo trará uma resposta e o nosso programa
+//não saberá quando isso irá acontecer.
+/*cliente.gravar().then(() => {
+    console.log('Cliente atualizado com sucesso');
+}).catch((erro) => {
+      console.log(erro.message);
+});*/
+
+const clienteQQ = new Cliente();
+
+let listaClientes = [];
+
+clienteQQ.consultar('Geraldo').then((lista) => {
+    listaClientes = lista;
+}).catch(erro => {
+    console.log(`Nao foi possível encontrar o cliente: ${erro.message}`);
 })

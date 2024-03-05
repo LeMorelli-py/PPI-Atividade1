@@ -51,9 +51,9 @@ export default class ClienteDAO{
     async excluir(cliente){
         if (cliente instanceof Cliente){
             const conexao = await conectar();
-            const sql = `DELETE FROM cliente WHERE id = ?`;
+            const sql = `DELETE FROM cliente WHERE cpf = ?`;
             const parametros = [
-                cliente.codigo
+                cliente.cpf
             ]
             await conexao.execute(sql,parametros);
         }
