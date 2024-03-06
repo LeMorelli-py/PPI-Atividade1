@@ -86,21 +86,21 @@ https://templatemo.com/tm-583-festava-live
                         <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
                             <h2 class="text-center mb-4">Cadastre-se:</h2>
 
-                            <form class="form-estilo" id="formulario">
+                            <form class="form-estilo" id="formulario" >
                                 <h2 class="mb-2 fs-5">Informações pessoais:</h2><br>
                                 <label for="obrigatorio" class="form-label"><b>Campos Obrigatórios</b><span class="text-danger">*</span></label>
                     
                                 <div class="col-md-12 mt-6">
                                     <div class="row">
                                         <div class="col mb-2">
-                                            <label for="nome" class="form-label">Nome:  <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control maiusculo" id="nome" pattern="^[A-Za-z]+$"
-                                                placeholder="" maxlength="30" required>
+                                            <label for="nome" class="form-label">Nome:</label>
+                                            <input type="text" class="form-control" id="nome" 
+                                                placeholder="Nome Completo" maxlength="30" required>
                                         </div>
                                         <div class="col mb-2">
-                                            <label for="sobrenome" class="form-label">Telefone <span class="text-danger">*</span></label>
-                                            <input oninput="validarTelefone(InputEvent)" type="text" class="form-control maiusculo" id="sobrenome" pattern="^[A-Za-z]+$"
-                                                placeholder="" maxlength="20" required >
+                                            <label for="telefone" class="form-label">Telefone <span class="text-danger">*</span></label>
+                                            <input oninput="validarTelefone(InputEvent)" type="number" class="form-control maiusculo" id="telefone" pattern="^[A-Za-z]+$"
+                                                placeholder="" maxlength="20"  required >
                                         </div>
                                     </div>
                                 </div>
@@ -109,9 +109,9 @@ https://templatemo.com/tm-583-festava-live
                                     <div class="row">
                                         <div class="col mb-2">
                                             <label for="email" class="form-label">Email: <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="email"
+                                            <input type="email" class="form-control" id="email"
                                                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                                                placeholder="" required>
+                                                placeholder="E-mail" required>
                                         </div>
 
                                        
@@ -122,8 +122,8 @@ https://templatemo.com/tm-583-festava-live
                                 <div class="col-md-12 mt-6">
                                    <p> <div class="row">
                                         <div class="col mb-2">
-                                            <label for="bairro" class="form-label">Endereço</label>
-                                            <input type="text" class="form-control" id="bairro">
+                                            <label for="endereco" class="form-label">Endereço</label>
+                                            <input type="text" class="form-control" id='endereco'>
                                         </div></p>
                                         
                                        
@@ -133,7 +133,7 @@ https://templatemo.com/tm-583-festava-live
                                         </div>
                                         <div class="col mb-2">
                                             <label for="estados">Selecione um estado:</label>
-                                            <select id="estados" name="estados"class="form-control">
+                                            <select id="estado" name="estados"class="form-control">
                                             <option value="UX">Clique aqui ↓ </option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
@@ -168,23 +168,33 @@ https://templatemo.com/tm-583-festava-live
                                             
                                             
                                                 <label for="cpf" class="form-label">CPF</label>
-                                                <input type="text" class="form-control" id="cpf" placeholder="Somente números" oninput="validarCPF(InputEvent)">
+                                                <input type="text" class="form-control" id="cpf" placeholder="Somente números" required>
                                         
                                             
                                         </div>
                                         
                                         <div class="col mb-2">
-                                            <label for="dt_nasc" class="form-label">Data Nascimento</label>
-                                            <input type="date" class="form-control" id="dt_nasc" placeholder="Somente números">
+                                            <label for="dt_nasc" class="form-label" >Data Nascimento</label>
+                                            <input type="date" class="form-control" id="nascimento" placeholder="Somente números">
                                         </div>
-                                        <div><a onclick="exibirAlerta()" href="login.html" class="btn custom-btn d-lg-block d-none">Cadastro de Clientes</a>
-                                            <title>Alerta de Cadastro</title>
-                                            <script>
-                                              function exibirAlerta() {
-                                                alert("Cliente Cadastrado com sucesso!! Nos vemos novamente no futuro, ou no passado!!");
-                                              }
-                                            </script>
+                                        <div>
+                                        <button onclick="pegarValores(); cadastrar();" class="btn custom-btn d-lg-block d-none">Cadastrar Cliente</button>
+                                            <title>Cadastro de Cliente</title>
+
+                                        
+                                        <button onclick="pegarValores(); atualiza();"  class="btn custom-btn d-lg-block d-none">Atualizar Clientes</button>
+                                            <title>Atualização de Cadastro</title>
+
                                         </div>
+                                        <div>
+                                        <button onclick="pegarValores(); exclui();" class="btn custom-btn d-lg-block d-none">Excluir Clientes</button>
+                                            <title>Exclusão de Cadastro</title>
+                                        
+                                        <button href="login.html" class="btn custom-btn d-lg-block d-none">Voltar</button>
+                                    </div>  
+                                        </div>
+
+                                    </div>
                                     </div>
                                 </div>
                     
@@ -336,6 +346,9 @@ T e m p l a t e M o
     <script src="js/main.js"></script>
     <script src="js/valida_doc.js"></script>
     <script src="js/scriptClientes.js"></script>
+    <script src="./scripts/cadastro.js"></script>
+    <script src="../Persistencia/ClientesDAO.js"></script>
+    <script type="text/javascript" src="../index.js"></script>
 </body>
 
 </html>

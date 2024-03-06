@@ -10,7 +10,7 @@ export default class Clientes{
     #cpf;
     #nascimento;
  
-    constructor(id = 0, nome="", telefone = "", email="", endereco="", cidade="", estado="", cpf="", nascimento=""){
+    constructor(id = 0, nome= "", telefone = "", email="", endereco="", cidade="", estado="", cpf="", nascimento=""){
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -27,7 +27,7 @@ export default class Clientes{
     set id(new_id){
         this.#id = new_id;
     }
-    get nome (){
+    get nome(){
         return this.#nome;
     }
     set nome(new_nome){
@@ -109,3 +109,4 @@ export default class Clientes{
         }
     }
 }
+

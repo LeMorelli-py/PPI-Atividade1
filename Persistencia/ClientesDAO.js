@@ -1,4 +1,4 @@
-import conectar from "./conexao.js"; //não esquecer de colocar a extensão .js no final
+import conectar from "./conexao.js";
 import Cliente from "../publico/scripts/cadastro.js";
 //DAO - Data Access Object
 export default class ClienteDAO{
@@ -41,7 +41,7 @@ export default class ClienteDAO{
                 cliente.cpf,
                 cliente.nascimento,
                 cliente.id
-            ];
+            ];  
 
            await conexao.execute(sql,parametros);
            

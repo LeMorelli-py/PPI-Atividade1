@@ -44,37 +44,66 @@ app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
 })
 
-const cliente = new Cliente(2,
-                            'Maria João da Silva',
-                            '(14) 88888-9999',
-                            'mariajoao@email.com',
-                            'Rua cinco, 9998',
-                            'Campinas',
-                            'SP',
-                            '152.222.333-44',
-                            '01/01/1985');
+function pegarValores(){
+    var id = document.getElementById("id").value;
+    var nome = document.getElementById("nome").value;
+    var telefone = document.getElementById("telefone").value;
+    var email = document.getElementById("email").value;
+    var endereco = document.getElementById("endereco").value;
+    var cidade = document.getElementById("cidade").value;
+    var estado = document.getElementById("estado").value;
+    var cpf = document.getElementById("cpf").value;
+    var nascimento = document.getElementById("nascimento").value;
+  
+    console.log("ID: " + id);
+    console.log("Nome: " + nome);
+    console.log("Telefone: " + telefone);
+    console.log("Email: " + email);
+    console.log("Endereço: " + endereco);
+    console.log("Cidade: " + cidade);
+    console.log("Estado: " + estado);
+    console.log("CPF: " + cpf);
+    console.log("Data de Nascimento: " + nascimento);*/
+  }
+/*const cliente = new Cliente(0,
+                            nome,
+                            telefone,
+                            email,
+                            endereço,
+                            cidade,
+                            estado,
+                            cpf,
+                            nascimento);*/
 
 //nos metodos assincronos é preciso manipular as promesses (promises)
 //Então, em algum momento o metodo trará uma resposta e o nosso programa
 //não saberá quando isso irá acontecer.
-/*cliente.gravar().then(() => {
-    console.log('Cliente Cadastrado com sucesso');
-}).catch((erro) => {
-      console.log(erro.message);
-});
+function cadastrar(){
+    let cliente = newcliente()
+    cliente.gravar().then(() => {
+        console.log('Cliente Cadastrado com sucesso');
+    }).catch((erro) => {
+        console.log(erro.message);
+    });
+}
 
-cliente.atualizar().then(() => {
-    console.log('Cliente atualizado com sucesso');
-}).catch((erro) => {
-      console.log(erro.message);
-});
+function atualiza(){
+    cliente.atualizar().then(() => {
+        console.log('Cliente atualizado com sucesso');
+    }).catch((erro) => {
+        console.log(erro.message);
+    });
+}
 
-cliente.excluir().then(() => {
-    console.log('Cliente excluído com sucesso');
-}).catch((erro) => {
-      console.log(erro.message);
-});
-const clienteQQ = new Cliente();
+function exclui(){
+    cliente.excluir().then(() => {
+        console.log('Cliente excluído com sucesso');
+    }).catch((erro) => {
+        console.log(erro.message);
+    });
+}
+
+/*const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
