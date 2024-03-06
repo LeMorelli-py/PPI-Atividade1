@@ -3,16 +3,15 @@ import process from 'process';
 import path from 'path';
 import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
-import Cliente from './publico/scripts/cadastro.js';
+import Cliente from './publico/scripts/Clientes.js';
 import { error } from 'console';
 
-const host='0.0.0.0'; //O ip 0.0.0.0 representa todas as interfaces (placas de rede) do computador onde essa aplicação for executada
-const porta = 3000;  //Porta identifica um programa em execução no host hospedeiro
+const host='0.0.0.0'; 
+const porta = 3000;  
 const app = express();
 
-app.use(express.urlencoded({extended: true})); //biblioteca qs
+app.use(express.urlencoded({extended: true})); 
 
-//gerencie uma sessão como sendo uma espécie de memória adquirida pelo servidor para lembrar com quem ele conversa
 app.use(session({
    secret: '$&n#@',
     resave: false,
@@ -22,7 +21,6 @@ app.use(session({
    }
 }))
 
-//O express oferece funcionalidades para permitir que conteúdo estático seja fornecido
 
 app.use(express.static(path.join(process.cwd(), 'publico')));
 
@@ -44,66 +42,40 @@ app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
 })
 
-function pegarValores(){
-    var id = document.getElementById("id").value;
-    var nome = document.getElementById("nome").value;
-    var telefone = document.getElementById("telefone").value;
-    var email = document.getElementById("email").value;
-    var endereco = document.getElementById("endereco").value;
-    var cidade = document.getElementById("cidade").value;
-    var estado = document.getElementById("estado").value;
-    var cpf = document.getElementById("cpf").value;
-    var nascimento = document.getElementById("nascimento").value;
-  
-    console.log("ID: " + id);
-    console.log("Nome: " + nome);
-    console.log("Telefone: " + telefone);
-    console.log("Email: " + email);
-    console.log("Endereço: " + endereco);
-    console.log("Cidade: " + cidade);
-    console.log("Estado: " + estado);
-    console.log("CPF: " + cpf);
-    console.log("Data de Nascimento: " + nascimento);*/
-  }
-/*const cliente = new Cliente(0,
-                            nome,
-                            telefone,
-                            email,
-                            endereço,
-                            cidade,
-                            estado,
-                            cpf,
-                            nascimento);*/
 
-//nos metodos assincronos é preciso manipular as promesses (promises)
-//Então, em algum momento o metodo trará uma resposta e o nosso programa
-//não saberá quando isso irá acontecer.
-function cadastrar(){
-    let cliente = newcliente()
-    cliente.gravar().then(() => {
+const cliente = new Cliente(0,
+                            "Mario da Silva",
+                            '1499988888',
+                            'email@email',
+                            'Rua dos Alfeneiros, 123',
+                            "Piraporinha",
+                            'SP',
+                            "152.152.152-15",
+                            '05/05/2005');
+
+
+
+cliente.gravar().then(() => {
         console.log('Cliente Cadastrado com sucesso');
-    }).catch((erro) => {
+}).catch((erro) => {
         console.log(erro.message);
-    });
-}
+});
 
-function atualiza(){
-    cliente.atualizar().then(() => {
-        console.log('Cliente atualizado com sucesso');
-    }).catch((erro) => {
-        console.log(erro.message);
-    });
-}
+/*cliente.atualizar().then(() => {
+    console.log('Cliente atualizado com sucesso');
+}).catch((erro) => {
+    console.log(erro.message);
+});
 
-function exclui(){
-    cliente.excluir().then(() => {
-        console.log('Cliente excluído com sucesso');
-    }).catch((erro) => {
-        console.log(erro.message);
-    });
-}
 
-/*const clienteQQ = new Cliente();
+cliente.excluir().then(() => {
+    console.log('Cliente excluído com sucesso');
+}).catch((erro) => {
+    console.log(erro.message);
+});
+
+
+const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
