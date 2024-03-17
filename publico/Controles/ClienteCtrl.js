@@ -1,18 +1,17 @@
-import Cliente from "../../publico/scripts/Clientes.js";
+import Cliente from "../../Modelos/Clientes.js";
 
 export default class ClienteCtrl{
 
  
     gravar(requisicao, resposta){
 
-        //prepar o método gravar para produzir respostas no formato JSON
+        //preparar o método gravar para produzir respostas no formato JSON
         resposta.type('application/json');
 
         //HTTP gravar um cliente é enviar uma requisição do tipo POST
         //trazendo dados no formato JSON
         if(requisicao.method === "POST" && requisicao.is('application/json')){
             const dados = requisicao.body; //extrair dados do corpo da requisição
-            
             const nome = dados.nome;
             const telefone = dados.telefone;
             const email = dados.email;
@@ -23,14 +22,14 @@ export default class ClienteCtrl{
             const nascimento = dados.nascimento
 
             //pseudo validação nos dados
-            if (nome && telefone && email &&endereco && cidade && estado && cpf && nascimento){
+            if (nome && telefone && email && endereco && cidade && estado && cpf && nascimento){
                 const cliente = new Cliente(0, nome, telefone, email, endereco, cidade, estado, cpf, nascimento);
                 cliente.gravar().then(()=>{
                     resposta.status(201);
                     resposta.json({
                         "status":true,
                         "mensagem": "Cliente gravado com sucesso!",
-                        "codigo_cliente": cliente.codigo
+                        "codigo_cliente": cliente.id
                     });
                 }).catch((erro) =>{
                     resposta.status(500);
@@ -62,19 +61,18 @@ export default class ClienteCtrl{
         if ((requisicao.method === "PATCH" || requisicao.method === "PUT") && requisicao.is('application/json')){
             const dados = requisicao.body; //extrair dados do corpo da requisição
             //o código será extraído da url, exemplo: http://localhost:3000/cliente/1  1 é o código
-            const codigo = requisicao.params.codigo;
+            const id = requisicao.params.id;
             const nome = dados.nome;
             const telefone = dados.telefone;
             const email = dados.email;
             const endereco = dados.endereco;
-            const bairro = dados.bairro;
             const cidade = dados.cidade;
             const estado = dados.estado;
             const cpf = dados.cpf;
             const nascimento = dados.nascimento
-            if (codigo && codigo > 0 && nome && telefone && email && endereco && bairro && cidade && estado  && cpf && nascimento)
+            if (id && id > 0 && nome && telefone && email && endereco && cidade && estado  && cpf && nascimento)
             {
-                const cliente = new Cliente(codigo, nome, telefone, email, endereco, cidade, estado, cpf, nascimento);
+                const cliente = new Cliente(id, nome, telefone, email, endereco, cidade, estado, cpf, nascimento);
                 cliente.atualizar()
                 .then(()=>{
                     resposta.status(200);
@@ -112,9 +110,9 @@ export default class ClienteCtrl{
         resposta.type('application/json');
         if (requisicao.method === "DELETE"){
             //o código do cliente que será excluído será extraído da url
-            const codigo = requisicao.params.codigo;
+            const id = requisicao.params.id;
             if (codigo && codigo > 0){
-                const cliente = new Cliente(codigo);
+                const cliente = new Cliente(id);
                 cliente.excluir()
                 .then(()=>{
                     resposta.status(200);

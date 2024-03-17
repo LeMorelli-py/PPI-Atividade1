@@ -3,7 +3,7 @@ import process from 'process';
 import path from 'path';
 import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
-import Cliente from './publico/scripts/Clientes.js';
+import Cliente from './Modelos/Clientes.js';
 import { error } from 'console';
 
 const host='0.0.0.0'; 
@@ -42,7 +42,7 @@ app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
 })
 
-
+/*
 const cliente = new Cliente(5,
                             "Mario da Souza",
                             '14811125535',
@@ -55,7 +55,7 @@ const cliente = new Cliente(5,
 
 
 
-/*cliente.gravar().then(() => {
+cliente.gravar().then(() => {
         console.log('Cliente Cadastrado com sucesso');
 }).catch((erro) => {
         console.log(erro.message);
@@ -74,7 +74,7 @@ const cliente = new Cliente(5,
     console.log(erro.message);
 });*/
 
-
+/*
 const clienteQQ = new Cliente();
 
 let listaClientes = [];
@@ -86,5 +86,5 @@ clienteQQ.consultar('Silva').then((listaClientes) => {
 }
 }).catch((erro) => {
     console.log(`Nao foi possível encontrar o cliente: ${erro.message}`);
-});
+});*/
 
