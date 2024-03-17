@@ -5,6 +5,7 @@ import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
 import Cliente from './Modelos/Clientes.js';
 import { error } from 'console';
+import rotaCliente from './Rotas/rotaCliente.js';
 
 const host='0.0.0.0'; 
 const porta = 3000;  
@@ -37,6 +38,11 @@ app.post('/login', (requisicao, resposta)=>{
 })
 
 app.use(autenticar, express.static(path.join(process.cwd(), 'privado')));
+
+
+app.use('/controle', rotaCliente);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.listen(porta, host, ()=>{
     console.log(`Servidor escutando em http://${host}:${porta}`);
