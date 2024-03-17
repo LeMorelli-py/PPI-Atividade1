@@ -43,48 +43,48 @@ app.listen(porta, host, ()=>{
 })
 
 
-const cliente = new Cliente(0,
-                            "Mario da Silva",
-                            '1499988888',
-                            'email@email',
-                            'Rua dos Alfeneiros, 123',
-                            "Piraporinha",
+const cliente = new Cliente(5,
+                            "Mario da Souza",
+                            '14811125535',
+                            'email.mail@email',
+                            'Avenida dos Livros, 123',
+                            "Sao Paulo",
                             'SP',
-                            "152.152.152-15",
-                            '05/05/2005');
+                            "152.089.089-15",
+                            '05/05/2000');
 
 
 
-cliente.gravar().then(() => {
+/*cliente.gravar().then(() => {
         console.log('Cliente Cadastrado com sucesso');
 }).catch((erro) => {
         console.log(erro.message);
-});
+});*/
 
 /*cliente.atualizar().then(() => {
     console.log('Cliente atualizado com sucesso');
 }).catch((erro) => {
     console.log(erro.message);
-});
+});*/
 
 
-cliente.excluir().then(() => {
+/*cliente.excluir().then(() => {
     console.log('Cliente excluído com sucesso');
 }).catch((erro) => {
     console.log(erro.message);
-});
+});*/
 
 
 const clienteQQ = new Cliente();
 
 let listaClientes = [];
 
-clienteQQ.consultar(2).then((listaClientes) => {
+clienteQQ.consultar('Silva').then((listaClientes) => {
     console.log('Clientes encontrados:');
     for (const cliente of listaClientes){
         console.log(cliente.toJSON());
 }
 }).catch((erro) => {
     console.log(`Nao foi possível encontrar o cliente: ${erro.message}`);
-});*/
+});
 
