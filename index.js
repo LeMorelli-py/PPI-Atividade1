@@ -3,7 +3,6 @@ import process from 'process';
 import path from 'path';
 import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
-import Cliente from './Modelos/Clientes.js';
 import { error } from 'console';
 import rotaCliente from './Rotas/rotaCliente.js';
 
@@ -11,6 +10,7 @@ const host='0.0.0.0';
 const porta = 3000;  
 const app = express();
 
+app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
 
 app.use(session({
@@ -25,20 +25,20 @@ app.use(session({
 
 app.use(express.static(path.join(process.cwd(), 'publico')));
 
-
-
 app.post('/login', (requisicao, resposta)=>{
     const { usuario, senha } = requisicao.body;
     if (usuario && senha && usuario === 'Leandro' && senha === '0526'){
         requisicao.session.usuarioLogado = true;
         resposta.redirect("/main.html");
-    } else{
+    } 
+    else{
         resposta.redirect('/login.html');
    }
 })
+app.use(express.json());
+app.use('/clientes', rotaCliente);
 
 app.use(autenticar, express.static(path.join(process.cwd(), 'privado')));
-
 
 app.use('/controle', rotaCliente);
 app.use(express.json());

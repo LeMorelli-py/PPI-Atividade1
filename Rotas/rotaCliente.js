@@ -1,5 +1,10 @@
+//Rota é uma micro aplicação express que se encarrega de processar
+//requisições em um determinado endpoint
+//Por exemplo: http://localhost:3000/cliente  <-- cliente é um endpoint
+//            domínio da aplicação   endpoint 
+
 import { Router } from 'express';
-import ClienteCtrl from '../Controles/ClienteCtrl.js';
+import ClienteCtrl from './../Controles/ClienteCtrl.js';
 
 const rotaCliente = new Router();
 const cliCtrl = new ClienteCtrl();

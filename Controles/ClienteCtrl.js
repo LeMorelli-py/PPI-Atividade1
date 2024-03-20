@@ -1,11 +1,20 @@
-import Cliente from "../Modelos/Clientes.js";
-
+import Clientes from "../Modelos/Clientes.js";
 export default class ClienteCtrl{
 
- 
+
+    //Esta Classe terá a responsabilidade de traduzir pedidos HTTP em 
+    //comandos internos da aplicação
+    //A nossa aplicação sabe gravar, atualizar, excluir e consultar clientes 
+    //no banco de dados
+
+    //Será necessário manipular requisições HTTP
+    //Requisições HTTP (GET, POST, PUT ou PATCH, DELETE)
+
+    //Camada de controle será síncrona, então iremos resolver os métodos assíncronos (promises)
+
     gravar(requisicao, resposta){
 
-        //preparar o método gravar para produzir respostas no formato JSON
+        //prepar o método gravar para produzir respostas no formato JSON
         resposta.type('application/json');
 
         //HTTP gravar um cliente é enviar uma requisição do tipo POST
@@ -19,17 +28,18 @@ export default class ClienteCtrl{
             const cidade = dados.cidade;
             const estado = dados.estado;
             const cpf = dados.cpf;
-            const nascimento = dados.nascimento
+            const nascimento = dados.nascimento;
 
             //pseudo validação nos dados
-            if (nome && telefone && email && endereco && cidade && estado && cpf && nascimento){
-                const cliente = new Cliente(0, nome, telefone, email, endereco, cidade, estado, cpf, nascimento);
+            if (nome && telefone && email && endereco && cidade && estado && cpf &&  nascimento){
+                const cliente = new Clientes(0, nome, telefone, email, endereco, cidade, estado,  cpf, nascimento);
+                console.log("Gravando o cliente " + cliente.nome);
                 cliente.gravar().then(()=>{
                     resposta.status(201);
                     resposta.json({
                         "status":true,
                         "mensagem": "Cliente gravado com sucesso!",
-                        "codigo_cliente": cliente.id
+                        "codigo_cliente": cliente.codigo
                     });
                 }).catch((erro) =>{
                     resposta.status(500);
@@ -61,7 +71,7 @@ export default class ClienteCtrl{
         if ((requisicao.method === "PATCH" || requisicao.method === "PUT") && requisicao.is('application/json')){
             const dados = requisicao.body; //extrair dados do corpo da requisição
             //o código será extraído da url, exemplo: http://localhost:3000/cliente/1  1 é o código
-            const id = requisicao.params.id;
+            const codigo = requisicao.params.codigo;
             const nome = dados.nome;
             const telefone = dados.telefone;
             const email = dados.email;
@@ -69,10 +79,10 @@ export default class ClienteCtrl{
             const cidade = dados.cidade;
             const estado = dados.estado;
             const cpf = dados.cpf;
-            const nascimento = dados.nascimento
-            if (id && id > 0 && nome && telefone && email && endereco && cidade && estado  && cpf && nascimento)
+            const nascimento = dados.nascimento;
+            if (codigo && codigo > 0 && nome && telefone && email && endereco && cidade && estado && cpf &&  nascimento)
             {
-                const cliente = new Cliente(id, nome, telefone, email, endereco, cidade, estado, cpf, nascimento);
+                const cliente = new Clientes(codigo,  nome, telefone, email, endereco, cidade, estado,  cpf, nascimento);
                 cliente.atualizar()
                 .then(()=>{
                     resposta.status(200);
@@ -110,9 +120,9 @@ export default class ClienteCtrl{
         resposta.type('application/json');
         if (requisicao.method === "DELETE"){
             //o código do cliente que será excluído será extraído da url
-            const id = requisicao.params.id;
+            const codigo = requisicao.params.codigo;
             if (codigo && codigo > 0){
-                const cliente = new Cliente(id);
+                const cliente = new Clientes(codigo);
                 cliente.excluir()
                 .then(()=>{
                     resposta.status(200);
@@ -150,11 +160,11 @@ export default class ClienteCtrl{
         resposta.type('application/json');
         if (requisicao.method === "GET"){
             const termoDePesquisa = requisicao.params.termo;
-            const cliente = new Cliente(0);
+            const cliente = new Clientes(0);
             cliente.consultar(termoDePesquisa)
-            .then((clientes)=>{
+            .then((cliente)=>{
                 resposta.status(200);
-                resposta.json(clientes);
+                resposta.json(cliente);
             })
             .catch((erro) =>{
                 resposta.status(500);
