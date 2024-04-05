@@ -5,11 +5,15 @@ import session from 'express-session';
 import autenticar from './seguranca/autenticar.js';
 import { error } from 'console';
 import rotaCliente from './Rotas/rotaCliente.js';
+import cors from 'cors';
 
 const host='0.0.0.0'; 
 const porta = 3000;  
 const app = express();
 
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
 
